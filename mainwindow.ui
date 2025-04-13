@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Цепочка обработки</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLineEdit" name="inputField">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>360</width>
+      <height>30</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="processButton">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>60</y>
+      <width>360</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Обработать</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="convertedLabel">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>100</y>
+      <width>360</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>После преобразования:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="formattedLabel">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>140</y>
+      <width>360</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>После форматирования:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="finalLabel">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>180</y>
+      <width>360</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Финальный результат:</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
