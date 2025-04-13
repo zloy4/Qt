@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QVariant>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -16,10 +17,11 @@ public:
     ~MainWindow();
 
 private slots:
-    void updateResult();
+    void processVariant();
 
 private:
     Ui::MainWindow *ui;
+    QString processAndFormatVariant(const QVariant &var);
 };
 
 #endif // MAINWINDOW_H
