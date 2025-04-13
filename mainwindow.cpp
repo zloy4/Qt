@@ -1,5 +1,8 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include <QDate>
+#include <QDebug>
+#include <QVariant>
 #include <algorithm>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -7,10 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-    connect(ui->processButton, &QPushButton::clicked, this, &MainWindow::updateResult);
-    connect(ui->modeComboBox, &QComboBox::currentIndexChanged, this, &MainWindow::updateResult);
-    connect(ui->inputLineEdit, &QLineEdit::textChanged, this, &MainWindow::updateResult);
+    connect(ui->processButton, &QPushButton::clicked, this, &MainWindow::processVariant);
 }
 
 MainWindow::~MainWindow()
@@ -18,30 +18,71 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::updateResult()
+void MainWindow::processVariant()
 {
     QString inputText = ui->inputLineEdit->text();
+    QVariant var;
+    bool ok = false;
+
+    // Проверка целого
+    int intValue = inputText.toInt(&ok);
+    if (ok) {
+        var = intValue;
+    } else {
+        // Проверка вещественного
+        double doubleValue = inputText.toDouble(&ok);
+        if (ok) {
+            var = doubleValue;
+        } else {
+            // Проверка логического
+            QString lowerText = inputText.toLower();
+            if (lowerText == "true" || lowerText == "false") {
+                var = (lowerText == "true");
+            } else {
+                // Проверка даты
+                QDate dateValue = QDate::fromString(inputText, "dd.MM.yyyy");
+                if (!dateValue.isValid())
+                    dateValue = QDate::fromString(inputText, "dd-MM-yyyy");
+                if (!dateValue.isValid())
+                    dateValue = QDate::fromString(inputText, "dd/MM/yyyy");
+
+                if (dateValue.isValid()) {
+                    var = dateValue;
+                } else {
+                    // Строка
+                    var = inputText;
+                }
+            }
+        }
+    }
+
+    QString resultText = processAndFormatVariant(var);
+    ui->resultLabel->setText(resultText);
+}
+
+QString MainWindow::processAndFormatVariant(const QVariant &var)
+{
     QString result;
 
-    switch (ui->modeComboBox->currentIndex())
-    {
-    case 0: // В верхний регистр
-        result = inputText.toUpper();
+    switch (var.typeId()) {
+    case QMetaType::Int:
+        result = QString("Целое число: %1 → %2").arg(var.toInt()).arg(var.toInt() * 2);
         break;
-    case 1: // В нижний регистр
-        result = inputText.toLower();
+    case QMetaType::Double:
+        result = QString("Вещественное число: %1 → %2").arg(var.toDouble()).arg(QString::number(var.toDouble(), 'f', 2));
         break;
-    case 2: // Обратный порядок
-        std::reverse(inputText.begin(), inputText.end());
-        result = inputText;
+    case QMetaType::Bool:
+        result = QString("Логическое: %1 → %2").arg(var.toBool() ? "true" : "false")
+                  .arg(!var.toBool() ? "true" : "false");
         break;
-    case 3: // Удалить пробелы
-        result = inputText.remove(' ');
+    case QMetaType::QDate:
+        result = QString("Дата: %1").arg(var.toDate().toString("dd.MM.yyyy"));
         break;
+    case QMetaType::QString:
     default:
-        result = inputText;
+        result = QString("Строка: %1").arg(var.toString());
         break;
     }
 
-    ui->resultLabel->setText(result);
+    return result;
 }
