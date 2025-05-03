@@ -1,0 +1,44 @@
+[
+{
+  "directory": "C:/Users/happy/Downloads/Qtlr5/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64 @CMakeFiles/GraphicEditor.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\GraphicEditor.dir\\GraphicEditor_autogen\\mocs_compilation.cpp.obj -c C:\\Users\\happy\\Downloads\\Qtlr5\\build\\GraphicEditor_autogen\\mocs_compilation.cpp",
+  "file": "C:/Users/happy/Downloads/Qtlr5/build/GraphicEditor_autogen/mocs_compilation.cpp",
+  "output": "CMakeFiles/GraphicEditor.dir/GraphicEditor_autogen/mocs_compilation.cpp.obj"
+},
+{
+  "directory": "C:/Users/happy/Downloads/Qtlr5/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64 @CMakeFiles/GraphicEditor.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\GraphicEditor.dir\\main.cpp.obj -c C:\\Users\\happy\\Downloads\\Qtlr5\\Qt-git2004-Qt-lr5_without_additional\\main.cpp",
+  "file": "C:/Users/happy/Downloads/Qtlr5/Qt-git2004-Qt-lr5_without_additional/main.cpp",
+  "output": "CMakeFiles/GraphicEditor.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/happy/Downloads/Qtlr5/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64 @CMakeFiles/GraphicEditor.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\GraphicEditor.dir\\mainwindow.cpp.obj -c C:\\Users\\happy\\Downloads\\Qtlr5\\Qt-git2004-Qt-lr5_without_additional\\mainwindow.cpp",
+  "file": "C:/Users/happy/Downloads/Qtlr5/Qt-git2004-Qt-lr5_without_additional/mainwindow.cpp",
+  "output": "CMakeFiles/GraphicEditor.dir/mainwindow.cpp.obj"
+},
+{
+  "directory": "C:/Users/happy/Downloads/Qtlr5/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64 @CMakeFiles/GraphicEditor.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\GraphicEditor.dir\\shape.cpp.obj -c C:\\Users\\happy\\Downloads\\Qtlr5\\Qt-git2004-Qt-lr5_without_additional\\shape.cpp",
+  "file": "C:/Users/happy/Downloads/Qtlr5/Qt-git2004-Qt-lr5_without_additional/shape.cpp",
+  "output": "CMakeFiles/GraphicEditor.dir/shape.cpp.obj"
+},
+{
+  "directory": "C:/Users/happy/Downloads/Qtlr5/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64 @CMakeFiles/GraphicEditor.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\GraphicEditor.dir\\graphicmodel.cpp.obj -c C:\\Users\\happy\\Downloads\\Qtlr5\\Qt-git2004-Qt-lr5_without_additional\\graphicmodel.cpp",
+  "file": "C:/Users/happy/Downloads/Qtlr5/Qt-git2004-Qt-lr5_without_additional/graphicmodel.cpp",
+  "output": "CMakeFiles/GraphicEditor.dir/graphicmodel.cpp.obj"
+},
+{
+  "directory": "C:/Users/happy/Downloads/Qtlr5/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64 @CMakeFiles/GraphicEditor.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\GraphicEditor.dir\\customgraphicsscene.cpp.obj -c C:\\Users\\happy\\Downloads\\Qtlr5\\Qt-git2004-Qt-lr5_without_additional\\customgraphicsscene.cpp",
+  "file": "C:/Users/happy/Downloads/Qtlr5/Qt-git2004-Qt-lr5_without_additional/customgraphicsscene.cpp",
+  "output": "CMakeFiles/GraphicEditor.dir/customgraphicsscene.cpp.obj"
+},
+{
+  "directory": "C:/Users/happy/Downloads/Qtlr5/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64 @CMakeFiles/GraphicEditor.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\GraphicEditor.dir\\graphiccontroller.cpp.obj -c C:\\Users\\happy\\Downloads\\Qtlr5\\Qt-git2004-Qt-lr5_without_additional\\graphiccontroller.cpp",
+  "file": "C:/Users/happy/Downloads/Qtlr5/Qt-git2004-Qt-lr5_without_additional/graphiccontroller.cpp",
+  "output": "CMakeFiles/GraphicEditor.dir/graphiccontroller.cpp.obj"
+}
+]
