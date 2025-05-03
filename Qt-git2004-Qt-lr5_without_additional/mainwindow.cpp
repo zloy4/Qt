@@ -7,6 +7,11 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
     setupUI();
     setupToolBar();
     setupConnections();
+    QShortcut* undoShortcut = new QShortcut(QKeySequence("Ctrl+Z"), this);
+    connect(undoShortcut, &QShortcut::activated, this, &MainWindow::onUndoAction);
+
+    QShortcut* redoShortcut = new QShortcut(QKeySequence("Ctrl+Y"), this);
+    connect(redoShortcut, &QShortcut::activated, this, &MainWindow::onRedoAction);
 }
 
 MainWindow::~MainWindow() {}
@@ -37,7 +42,15 @@ void MainWindow::setupToolBar() {
     QAction* clearAction = toolBar->addAction("Clear");
     QAction* undoAction = toolBar->addAction("Undo");
     QAction* redoAction = toolBar->addAction("Redo");
-
+    
+    QAction* undoAction = toolBar->addAction("Undo");
+    undoAction->setShortcut(QKeySequence("Ctrl+Z"));
+    connect(undoAction, &QAction::triggered, this, &MainWindow::onUndoAction);
+    
+    QAction* redoAction = toolBar->addAction("Redo");
+    redoAction->setShortcut(QKeySequence("Ctrl+Y"));
+    connect(redoAction, &QAction::triggered, this, &MainWindow::onRedoAction);
+    
     connect(selectAction, &QAction::triggered, this, &MainWindow::onSelectAction);
     connect(lineAction, &QAction::triggered, this, &MainWindow::onLineAction);
     connect(rectAction, &QAction::triggered, this, &MainWindow::onRectAction);
