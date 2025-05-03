@@ -56,17 +56,17 @@ RM = C:\msys64\mingw64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\happy\Downloads\Qtlr5\Qt-git2004-Qt-lr5_without_additional
+CMAKE_SOURCE_DIR = C:\Users\happy\Downloads\Qtlr5\Qt
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\happy\Downloads\Qtlr5\build
+CMAKE_BINARY_DIR = C:\Users\happy\Downloads\Qtlr5\Qt\build
 
 #=============================================================================
 # Targets provided globally by CMake.
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
+	@echo Running external command ...
 	C:\msys64\mingw64\bin\cmake.exe -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
@@ -76,7 +76,7 @@ edit_cache/fast: edit_cache
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
+	@echo Running external command ...
 	C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
@@ -84,56 +84,11 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-.PHONY : list_install_components/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	C:\msys64\mingw64\bin\cmake.exe -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	C:\msys64\mingw64\bin\cmake.exe -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	C:\msys64\mingw64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	C:\msys64\mingw64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	C:\msys64\mingw64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	C:\msys64\mingw64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\happy\Downloads\Qtlr5\build\CMakeFiles C:\Users\happy\Downloads\Qtlr5\build\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\happy\Downloads\Qtlr5\Qt\build\CMakeFiles C:\Users\happy\Downloads\Qtlr5\Qt\build\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\happy\Downloads\Qtlr5\build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\happy\Downloads\Qtlr5\Qt\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -160,213 +115,6 @@ depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named GraphicEditor
-
-# Build rule for target.
-GraphicEditor: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 GraphicEditor
-.PHONY : GraphicEditor
-
-# fast build rule for target.
-GraphicEditor/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphicEditor.dir\build.make CMakeFiles/GraphicEditor.dir/build
-.PHONY : GraphicEditor/fast
-
-#=============================================================================
-# Target rules for targets named GraphicEditor_autogen_timestamp_deps
-
-# Build rule for target.
-GraphicEditor_autogen_timestamp_deps: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 GraphicEditor_autogen_timestamp_deps
-.PHONY : GraphicEditor_autogen_timestamp_deps
-
-# fast build rule for target.
-GraphicEditor_autogen_timestamp_deps/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphicEditor_autogen_timestamp_deps.dir\build.make CMakeFiles/GraphicEditor_autogen_timestamp_deps.dir/build
-.PHONY : GraphicEditor_autogen_timestamp_deps/fast
-
-#=============================================================================
-# Target rules for targets named GraphicEditor_autogen
-
-# Build rule for target.
-GraphicEditor_autogen: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 GraphicEditor_autogen
-.PHONY : GraphicEditor_autogen
-
-# fast build rule for target.
-GraphicEditor_autogen/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphicEditor_autogen.dir\build.make CMakeFiles/GraphicEditor_autogen.dir/build
-.PHONY : GraphicEditor_autogen/fast
-
-GraphicEditor_autogen/mocs_compilation.obj: GraphicEditor_autogen/mocs_compilation.cpp.obj
-.PHONY : GraphicEditor_autogen/mocs_compilation.obj
-
-# target to build an object file
-GraphicEditor_autogen/mocs_compilation.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphicEditor.dir\build.make CMakeFiles/GraphicEditor.dir/GraphicEditor_autogen/mocs_compilation.cpp.obj
-.PHONY : GraphicEditor_autogen/mocs_compilation.cpp.obj
-
-GraphicEditor_autogen/mocs_compilation.i: GraphicEditor_autogen/mocs_compilation.cpp.i
-.PHONY : GraphicEditor_autogen/mocs_compilation.i
-
-# target to preprocess a source file
-GraphicEditor_autogen/mocs_compilation.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphicEditor.dir\build.make CMakeFiles/GraphicEditor.dir/GraphicEditor_autogen/mocs_compilation.cpp.i
-.PHONY : GraphicEditor_autogen/mocs_compilation.cpp.i
-
-GraphicEditor_autogen/mocs_compilation.s: GraphicEditor_autogen/mocs_compilation.cpp.s
-.PHONY : GraphicEditor_autogen/mocs_compilation.s
-
-# target to generate assembly for a file
-GraphicEditor_autogen/mocs_compilation.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphicEditor.dir\build.make CMakeFiles/GraphicEditor.dir/GraphicEditor_autogen/mocs_compilation.cpp.s
-.PHONY : GraphicEditor_autogen/mocs_compilation.cpp.s
-
-customgraphicsscene.obj: customgraphicsscene.cpp.obj
-.PHONY : customgraphicsscene.obj
-
-# target to build an object file
-customgraphicsscene.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphicEditor.dir\build.make CMakeFiles/GraphicEditor.dir/customgraphicsscene.cpp.obj
-.PHONY : customgraphicsscene.cpp.obj
-
-customgraphicsscene.i: customgraphicsscene.cpp.i
-.PHONY : customgraphicsscene.i
-
-# target to preprocess a source file
-customgraphicsscene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphicEditor.dir\build.make CMakeFiles/GraphicEditor.dir/customgraphicsscene.cpp.i
-.PHONY : customgraphicsscene.cpp.i
-
-customgraphicsscene.s: customgraphicsscene.cpp.s
-.PHONY : customgraphicsscene.s
-
-# target to generate assembly for a file
-customgraphicsscene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphicEditor.dir\build.make CMakeFiles/GraphicEditor.dir/customgraphicsscene.cpp.s
-.PHONY : customgraphicsscene.cpp.s
-
-graphiccontroller.obj: graphiccontroller.cpp.obj
-.PHONY : graphiccontroller.obj
-
-# target to build an object file
-graphiccontroller.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphicEditor.dir\build.make CMakeFiles/GraphicEditor.dir/graphiccontroller.cpp.obj
-.PHONY : graphiccontroller.cpp.obj
-
-graphiccontroller.i: graphiccontroller.cpp.i
-.PHONY : graphiccontroller.i
-
-# target to preprocess a source file
-graphiccontroller.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphicEditor.dir\build.make CMakeFiles/GraphicEditor.dir/graphiccontroller.cpp.i
-.PHONY : graphiccontroller.cpp.i
-
-graphiccontroller.s: graphiccontroller.cpp.s
-.PHONY : graphiccontroller.s
-
-# target to generate assembly for a file
-graphiccontroller.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphicEditor.dir\build.make CMakeFiles/GraphicEditor.dir/graphiccontroller.cpp.s
-.PHONY : graphiccontroller.cpp.s
-
-graphicmodel.obj: graphicmodel.cpp.obj
-.PHONY : graphicmodel.obj
-
-# target to build an object file
-graphicmodel.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphicEditor.dir\build.make CMakeFiles/GraphicEditor.dir/graphicmodel.cpp.obj
-.PHONY : graphicmodel.cpp.obj
-
-graphicmodel.i: graphicmodel.cpp.i
-.PHONY : graphicmodel.i
-
-# target to preprocess a source file
-graphicmodel.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphicEditor.dir\build.make CMakeFiles/GraphicEditor.dir/graphicmodel.cpp.i
-.PHONY : graphicmodel.cpp.i
-
-graphicmodel.s: graphicmodel.cpp.s
-.PHONY : graphicmodel.s
-
-# target to generate assembly for a file
-graphicmodel.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphicEditor.dir\build.make CMakeFiles/GraphicEditor.dir/graphicmodel.cpp.s
-.PHONY : graphicmodel.cpp.s
-
-main.obj: main.cpp.obj
-.PHONY : main.obj
-
-# target to build an object file
-main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphicEditor.dir\build.make CMakeFiles/GraphicEditor.dir/main.cpp.obj
-.PHONY : main.cpp.obj
-
-main.i: main.cpp.i
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphicEditor.dir\build.make CMakeFiles/GraphicEditor.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphicEditor.dir\build.make CMakeFiles/GraphicEditor.dir/main.cpp.s
-.PHONY : main.cpp.s
-
-mainwindow.obj: mainwindow.cpp.obj
-.PHONY : mainwindow.obj
-
-# target to build an object file
-mainwindow.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphicEditor.dir\build.make CMakeFiles/GraphicEditor.dir/mainwindow.cpp.obj
-.PHONY : mainwindow.cpp.obj
-
-mainwindow.i: mainwindow.cpp.i
-.PHONY : mainwindow.i
-
-# target to preprocess a source file
-mainwindow.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphicEditor.dir\build.make CMakeFiles/GraphicEditor.dir/mainwindow.cpp.i
-.PHONY : mainwindow.cpp.i
-
-mainwindow.s: mainwindow.cpp.s
-.PHONY : mainwindow.s
-
-# target to generate assembly for a file
-mainwindow.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphicEditor.dir\build.make CMakeFiles/GraphicEditor.dir/mainwindow.cpp.s
-.PHONY : mainwindow.cpp.s
-
-shape.obj: shape.cpp.obj
-.PHONY : shape.obj
-
-# target to build an object file
-shape.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphicEditor.dir\build.make CMakeFiles/GraphicEditor.dir/shape.cpp.obj
-.PHONY : shape.cpp.obj
-
-shape.i: shape.cpp.i
-.PHONY : shape.i
-
-# target to preprocess a source file
-shape.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphicEditor.dir\build.make CMakeFiles/GraphicEditor.dir/shape.cpp.i
-.PHONY : shape.cpp.i
-
-shape.s: shape.cpp.s
-.PHONY : shape.s
-
-# target to generate assembly for a file
-shape.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GraphicEditor.dir\build.make CMakeFiles/GraphicEditor.dir/shape.cpp.s
-.PHONY : shape.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -374,35 +122,7 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
-	@echo ... install
-	@echo ... install/local
-	@echo ... install/strip
-	@echo ... list_install_components
 	@echo ... rebuild_cache
-	@echo ... GraphicEditor_autogen
-	@echo ... GraphicEditor_autogen_timestamp_deps
-	@echo ... GraphicEditor
-	@echo ... GraphicEditor_autogen/mocs_compilation.obj
-	@echo ... GraphicEditor_autogen/mocs_compilation.i
-	@echo ... GraphicEditor_autogen/mocs_compilation.s
-	@echo ... customgraphicsscene.obj
-	@echo ... customgraphicsscene.i
-	@echo ... customgraphicsscene.s
-	@echo ... graphiccontroller.obj
-	@echo ... graphiccontroller.i
-	@echo ... graphiccontroller.s
-	@echo ... graphicmodel.obj
-	@echo ... graphicmodel.i
-	@echo ... graphicmodel.s
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
-	@echo ... mainwindow.obj
-	@echo ... mainwindow.i
-	@echo ... mainwindow.s
-	@echo ... shape.obj
-	@echo ... shape.i
-	@echo ... shape.s
 .PHONY : help
 
 

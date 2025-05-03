@@ -1,9 +1,2 @@
-C:/Users/happy/Downloads/Qtlr5/build/CMakeFiles/GraphicEditor.dir
-C:/Users/happy/Downloads/Qtlr5/build/CMakeFiles/edit_cache.dir
-C:/Users/happy/Downloads/Qtlr5/build/CMakeFiles/rebuild_cache.dir
-C:/Users/happy/Downloads/Qtlr5/build/CMakeFiles/list_install_components.dir
-C:/Users/happy/Downloads/Qtlr5/build/CMakeFiles/install.dir
-C:/Users/happy/Downloads/Qtlr5/build/CMakeFiles/install/local.dir
-C:/Users/happy/Downloads/Qtlr5/build/CMakeFiles/install/strip.dir
-C:/Users/happy/Downloads/Qtlr5/build/CMakeFiles/GraphicEditor_autogen_timestamp_deps.dir
-C:/Users/happy/Downloads/Qtlr5/build/CMakeFiles/GraphicEditor_autogen.dir
+C:/Users/happy/Downloads/Qtlr5/Qt/build/CMakeFiles/edit_cache.dir
+C:/Users/happy/Downloads/Qtlr5/Qt/build/CMakeFiles/rebuild_cache.dir
