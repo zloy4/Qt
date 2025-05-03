@@ -35,6 +35,8 @@ void MainWindow::setupToolBar() {
     toolBar->addSeparator();
     QAction* deleteAction = toolBar->addAction("Delete");
     QAction* clearAction = toolBar->addAction("Clear");
+    QAction* undoAction = toolBar->addAction("Undo");
+    QAction* redoAction = toolBar->addAction("Redo");
 
     connect(selectAction, &QAction::triggered, this, &MainWindow::onSelectAction);
     connect(lineAction, &QAction::triggered, this, &MainWindow::onLineAction);
@@ -45,6 +47,8 @@ void MainWindow::setupToolBar() {
     connect(deleteAction, &QAction::triggered, this, &MainWindow::onDeleteAction);
     connect(clearAction, &QAction::triggered, this, &MainWindow::onClearAction);
     connect(trapezoidAction, &QAction::triggered, this, &MainWindow::onTrapezoidAction);
+    connect(undoAction, &QAction::triggered, this, &MainWindow::onUndoAction);
+    connect(redoAction, &QAction::triggered, this, &MainWindow::onRedoAction);
 
 }
 
@@ -120,5 +124,12 @@ void MainWindow::handleMouseReleased() {
 void MainWindow::onTrapezoidAction() {
     controller->setEditorMode(EditorMode::CreateTrapezoid);
     view->setDragMode(QGraphicsView::NoDrag);
+}
+void MainWindow::onUndoAction() {
+    controller->undo();
+}
+
+void MainWindow::onRedoAction() {
+    controller->redo();
 }
 

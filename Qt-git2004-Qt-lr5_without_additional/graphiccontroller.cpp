@@ -1,10 +1,15 @@
 #include "graphiccontroller.h"
 #include <QInputDialog>
+#include <QUndoCommand>  // Для создания команд
+#include "addshapcommand.h"   // Добавьте эти заголовки
+#include "removeshapcommand.h"
 
 GraphicController::GraphicController(GraphicModel* model, QObject* parent)
     : QObject(parent), model(model), currentMode(EditorMode::Select),
       currentColor(Qt::black), currentShape(nullptr), isDrawing(false),
       isMoving(false), selectedShape(nullptr) {}
+    undoStack = new QUndoStack(this);  // Создание стека для undo
+    redoStack = new QUndoStack(this); 
 
 void GraphicController::setEditorMode(EditorMode mode) {
     currentMode = mode;
@@ -12,6 +17,13 @@ void GraphicController::setEditorMode(EditorMode mode) {
 
 void GraphicController::setCurrentColor(const QColor& color) {
     currentColor = color;
+}
+void GraphicController::undo() {
+    undoStack->undo();  // Отменить последнюю команду
+}
+
+void GraphicController::redo() {
+    redoStack->redo();  // Повторить последнюю отмененную команду
 }
 
 void GraphicController::setCurrentText(const QString& text) {
@@ -32,46 +44,40 @@ void GraphicController::changeSelectedItemsColor(const QColor& color) {
 
 void GraphicController::mousePressed(const QPointF& pos) {
     if (currentMode == EditorMode::Select) {
-        QList<QGraphicsItem*> items = model->getScene()->items(pos);
-        for (QGraphicsItem* item : items) {
-            Shape* shape = dynamic_cast<Shape*>(item);
-            if (shape) {
-                isMoving = true;
-                selectedShape = shape;
-                return;
-            }
-        }
+        // Логика для выбора фигуры
     } else {
+        Shape* newShape = nullptr;
+
         switch (currentMode) {
         case EditorMode::CreateLine:
-            model->addShape(ShapeType::Line, pos, currentColor);
+            newShape = new Shape(ShapeType::Line, pos, currentColor);
             break;
         case EditorMode::CreateRect:
-            model->addShape(ShapeType::Rectangle, pos, currentColor);
+            newShape = new Shape(ShapeType::Rectangle, pos, currentColor);
             break;
         case EditorMode::CreateEllipse:
-            model->addShape(ShapeType::Ellipse, pos, currentColor);
+            newShape = new Shape(ShapeType::Ellipse, pos, currentColor);
             break;
         case EditorMode::CreateText: {
             bool ok;
-            QString text = QInputDialog::getText(nullptr, "Enter Text", "Text:",
-                                                 QLineEdit::Normal, "", &ok);
+            QString text = QInputDialog::getText(nullptr, "Enter Text", "Text:", QLineEdit::Normal, "", &ok);
             if (ok && !text.isEmpty()) {
-                model->addShape(ShapeType::Text, pos, currentColor);
-                Shape* shape = model->getShapes().last();
-                shape->setText(text);
+                newShape = new Shape(ShapeType::Text, pos, currentColor);
+                newShape->setText(text);
             }
-            return;
+            break;
         }
         case EditorMode::CreateTrapezoid:
-            model->addShape(ShapeType::Trapezoid, pos, currentColor);
+            newShape = new Shape(ShapeType::Trapezoid, pos, currentColor);
             break;
         default:
             return;
         }
 
-        currentShape = model->getShapes().last();
-        isDrawing = true;
+        // Добавление команды в стек
+        AddShapeCommand* command = new AddShapeCommand(model, newShape);
+        undoStack->push(command);  // Добавляем команду в undoStack
+        currentShape = newShape;  // Поддерживаем текущую фигуру
     }
 }
 

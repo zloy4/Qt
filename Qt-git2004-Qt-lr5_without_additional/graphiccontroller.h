@@ -5,6 +5,8 @@
 #include <QColor>
 #include "graphicmodel.h"
 #include "shape.h"
+#include <QUndoStack>  // Для работы с undo/redo
+
 
 enum class EditorMode { Select, CreateLine, CreateRect, CreateEllipse, CreateText, CreateTrapezoid };
 
@@ -25,6 +27,8 @@ public:
 
     void deleteSelectedItems();
     void clearAll();
+    void undo();
+    void redo();
 
 private:
     GraphicModel* model;
@@ -35,6 +39,8 @@ private:
     bool isDrawing;
     bool isMoving;
     Shape* selectedShape;
+    QUndoStack* undoStack;
+    QUndoStack* redoStack;
 };
 
 #endif // GRAPHICCONTROLLER_H
